@@ -19,14 +19,17 @@ class PortfolioController extends Controller
     public function store(Request $request){
         request()->validate([
             "filter"=>["required"],
-            "lien"=>["required"],
+            "nom"=>["required"],
             "titre"=>["required"],
         ]);
 
-        //DB
         $portfolio = new Portfolio();
+        //STORAGE
+        $request->file('nom')->storePublicly('img/portfolio', 'public');
+        $portfolio->nom = $request->file('nom')->hashName();
+
+        //DB
         $portfolio->filter = $request->filter;
-        $portfolio->lien = $request->lien;
         $portfolio->titre = $request->titre;
         $portfolio->save();
         return redirect()->route('portfolio.index')->with('success', 'un projet ajouté');

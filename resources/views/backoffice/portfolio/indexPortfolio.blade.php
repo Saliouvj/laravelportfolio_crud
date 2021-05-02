@@ -6,6 +6,7 @@
         <h3 class="text-center mb-3">Portfolio</h3>
         <div class="container">
             @include('layouts.flash')
+
             <a href={{route('admin.index')}}>Back Admin</a>
             <table class="table">
                 <thead>
@@ -13,7 +14,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Titre</th>
                         <th scope="col">Filtre</th>
-                        <th scope="col">Lien de l'image</th>
+                        <th scope="col">Nom de l'image</th>
                         <th scope="col">action</th>
                     </tr>
                 </thead>
@@ -23,7 +24,7 @@
                             <th scope="row">{{$item->id}}</th>
                             <td>{{$item->titre}}</td>
                             <td>{{$item->filter}}</td>
-                            <td>{{$item->lien}}</td>
+                            <td>{{$item->Nom}}</td>
                             <td>
                                 <a href={{route('portfolio.edit', $item->id)}} class="btn btn-primary mb-1">edit</a>
                                 <a href={{route('portfolio.show', $item->id)}} class="btn btn-success mb-1">show</a>

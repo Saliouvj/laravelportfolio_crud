@@ -1,9 +1,9 @@
-@extends('layouts.indexAdmin')
+@extends('layouts.index')
 @include('layouts.flash')
 @section('content')
 
 <div class="container mt-5">
-    <h3 class="text-center">Modifier le profil</h3>
+    <h3 class="text-center">Modifier votre profil</h3>
     <form action={{route('about.update', $about->id)}} method="post"  enctype="multipart/form-data" class="w-75 mx-auto" >
             @csrf
             @method('PUT')
@@ -41,7 +41,7 @@
 
             <div class="row my-2">
                 <div class="col">
-                    <input type="date" class="form-control @error('birthday') is-invalid @enderror" value="{{$about->date}}" placeholder="date de naissance" name="birthday">
+                    <input type="date" class="form-control @error('birthday') is-invalid @enderror" value="{{$about->birthday}}" placeholder="date de naissance" name="birthday">
                     @error('birthday')
                         <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                     @enderror
@@ -108,7 +108,7 @@
                     <img src={{asset('img/'.$about->image)}} alt="photo" class="w-100">
                 </div>
                 <div class="col-4">
-                    <h5>Changer de photo</h5>
+                    <h5>Changer l'image</h5>
                     <input type="file" class="form-control-file" name ="image">
                 </div>
             </div>

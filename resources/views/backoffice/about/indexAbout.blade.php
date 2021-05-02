@@ -5,7 +5,7 @@
     <section id="about">
         <h3 class="text-center mb-3">About</h3>
         <div class="container">
-            <a href={{route('admin.index')}} class="text-center">Back Dashboard</a>
+            <a href={{route('admin.index')}} class="text-center">Back Admin</a>
             <table class="table">
                 <thead>
                     <tr>
