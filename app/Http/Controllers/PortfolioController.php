@@ -49,9 +49,16 @@ class PortfolioController extends Controller
     public function update(Portfolio $id, Request $request){
         request()->validate([
             "filter"=>["required"],
-            "lien"=>["required"],
+            "Nom"=>["required"],
             "titre"=>["required"],
         ]);
+        $portfolio = $id;
+        if ($request->nom != null) {
+            $request->file('nom')->storePublicly('img/portfolio', 'public');
+            $portfolio->nom = $request->file('nom')->hashName();
+            $portfolio->save();
+        }
+
         $portfolio = $id;
         $portfolio->filter = $request->filter;
         $portfolio->lien = $request->lien;
