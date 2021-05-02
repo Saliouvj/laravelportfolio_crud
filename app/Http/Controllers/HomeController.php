@@ -17,12 +17,13 @@ class HomeController extends Controller
         $skills = Skill::all();
         $portfolios = Portfolio::all();
         // $services = Service::all();
-        $services = Service::paginate(6);
+        $services = Service::paginate(6)->fragment('services');
         // $services->withPath('\#services');
         return view('home', compact('about',"facts", 'skills', 'portfolios', 'services'));
     }
 
     public function admin(){
-        return view('backoffice.admin');
+        $about = About::all();
+        return view('backoffice.admin', compact('about'));
     }
 }

@@ -6,7 +6,7 @@
         <h3 class="text-center mb-3">Skills</h3>
         <div class="container">
             @include('layouts.flash')
-            <a href={{route('admin.index')}}>Back Dashboard</a>
+            <a href={{route('admin.index')}}>Back Admin</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -28,14 +28,14 @@
                                 <form action={{route('skill.destroy', $item->id)}} method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger mb-1">del</button>
+                                    <button class="btn btn-danger mb-1">delete</button>
                                 </form>
                             </td>
                         </tr>                                                
                     @endforeach
                 </tbody>
             </table>
-            <a href={{route('skill.create')}} class="btn btn-primary">Ajouter un nv skill</a>
+            <a href={{route('skill.create')}} class="btn btn-success">Ajouter</a>
         </div>
     </section>
 @endsection

@@ -4,7 +4,7 @@
 @section('content')
     @include('partial.bo.navAdmin')
     <div class="container">
-        <h3 class="text-center">Ajouter un nv skill</h3>
+        <h3 class="text-center">Ajouter un skill</h3>
         <a href={{route('admin.index')}} class="text-center">Back admin</a>
         <form action={{ route('skill.store') }} method="post" class="w-75 mx-auto">
             @csrf
@@ -22,7 +22,7 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Valider</button>
+            <button type="submit" class="btn btn-success">Confirmer</button>
         </form>
     </div>
 @endsection

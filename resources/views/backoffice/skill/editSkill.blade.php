@@ -23,7 +23,7 @@
                     <span class="invalid-feedback"> <strong>{{ $message }}</strong></span>
                 @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Valider</button>
+            <button type="submit" class="btn btn-success">Confirmer</button>
         </form>
     </div>
 @endsection
